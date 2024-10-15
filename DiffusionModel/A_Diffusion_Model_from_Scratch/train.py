@@ -9,17 +9,17 @@ from dataset import load_transformed_dataset
 
 
 T = 300
-BATCH_SIZE = 32
+BATCH_SIZE = 64
 
 model = SimpleUnet()
 device = "cuda:2" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-dataset = load_transformed_dataset()
-dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
+train_dataset,test_dataset = load_transformed_dataset()
+dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True,drop_last=True)
 
 optimizer = Adam(model.parameters(), lr=0.001)
-epochs = 100 # Try more!
+epochs = 10 # Try more!
 
 add_noise_process = AddNoiseProcess(T)
 

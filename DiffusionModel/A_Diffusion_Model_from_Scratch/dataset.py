@@ -16,12 +16,12 @@ def load_transformed_dataset():
     ]
     data_transform = transforms.Compose(data_transforms)
 
-    train = torchvision.datasets.CIFAR10(
+    train_dataset = torchvision.datasets.CIFAR10(
         root="/home/wangerlie/Datasets", download=True,train=True,transform=data_transform
     )
 
-    test = torchvision.datasets.CIFAR10(
+    test_dataset = torchvision.datasets.CIFAR10(
         root="/home/wangerlie/Datasets", download=True, train=False,transform=data_transform
     )
-    return torch.utils.data.ConcatDataset([train, test])
+    return train_dataset,test_dataset
 
