@@ -1,5 +1,6 @@
 import torch
 
+
 def show_images(datset, num_samples=20, cols=4):
     """Plots some samples from the dataset"""
     plt.figure(figsize=(15, 15))
@@ -8,9 +9,6 @@ def show_images(datset, num_samples=20, cols=4):
             break
         plt.subplot(int(num_samples / cols) + 1, cols, i + 1)
         plt.imshow(img[0])
-
-
-
 
 
 def show_tensor_image(image):
@@ -77,6 +75,3 @@ def sample_plot_image():
             plt.subplot(1, num_images, int(i / stepsize) + 1)
             show_tensor_image(img.detach().cpu())
     plt.show()
-
-
-
