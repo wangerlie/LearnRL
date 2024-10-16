@@ -9,3 +9,4 @@ Diffusion Model related urls:
 
 D4RL related urls:
 1. https://github.com/ChenDRAG/CEP-energy-guided-diffusion
+2. https://github.com/jannerm/diffuser
